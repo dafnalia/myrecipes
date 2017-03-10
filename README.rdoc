@@ -1,0 +1,6 @@
+testing specs for recipes:
+name: string
+summary: text
+description: text
+
+- chef_id must be present
