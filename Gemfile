@@ -22,13 +22,17 @@ gem 'carrierwave', '0.10.0'
 
 gem 'mini_magick', '3.8.0'
 
+gem 'will_paginate', '3.1.6'
+
+gem 'bootstrap-will_paginate', '1.0.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '9.0.6'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '1.3.12'
   
-  gem 'pry'
+  gem 'pry', '0.10.4'
 end
 
 group :development do

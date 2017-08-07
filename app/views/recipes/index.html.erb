@@ -1,6 +1,8 @@
 <h1>Recipes</h1>
 <hr/>
 
+<%= will_paginate %>
+
 <% @recipes.each do |recipe| %>
 <div class="row">
   <div class="col-md-2">
@@ -14,8 +16,13 @@
     <p><%= recipe.summary %></p>
     <p>
       <span class="quiet">
-        <small><%= time_ago_in_words(recipe.created_at) %></small>
+        <small>created <%= time_ago_in_words(recipe.created_at) %> ago</small>
+      </span> <br/>
+      <% if recipe.created_at != recipe.updated_at %>
+      <span class="quiet">
+        <small> updated <%= time_ago_in_words(recipe.updated_at) %> ago</small>
       </span>
+      <% end %>
     </p>
     <div class="pull-right">
       <%= link_to like_recipe_path(recipe, like: true), method: :post do %>
@@ -32,3 +39,5 @@
   </div>
 </div>
 <% end %>
+
+<%= will_paginate %>
